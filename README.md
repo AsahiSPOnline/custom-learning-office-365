@@ -1,4 +1,4 @@
-# Microsoft 365 learning pathways
+# Microsoft 365 learning pathways - Asahi Translations
 
 Train employees with Microsoft 365 learning pathways, a digital, customizable learning solution that helps customers transform their organization. Microsoft 365 learning pathways provides:
 
