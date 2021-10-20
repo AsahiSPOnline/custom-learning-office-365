@@ -1,0 +1,46 @@
+name: Build WebParts
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      sourceBranch:
+        description: 'Branch'     
+        required: true
+        default: 'main'
+  workflow_call:
+    inputs:
+      sourceBranch:
+        description: 'Branch'     
+        required: true
+        default: 'main'
+        type: string
+
+jobs:
+  BuildWebPart:
+    runs-on: windows-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with: 
+          ref: ${{ github.event.inputs.sourceBranch }}
+      - name: Install dependencies
+        run: |
+          cd src/webpart
+          npm ci
+      - name: Compile Web Parts
+        run: |
+          cd src/webpart
+          gulp bundle --ship
+      - name: Package Web Parts
+        run: |
+          cd src/webpart
+          gulp package-solution --ship
+      - uses: actions/upload-artifact@v2
+        name: Upload artifacts
+        with:
+          name: Webparts
+          path: |
+            src\webpart\sharepoint\solution\customlearning.sppkg
+            
