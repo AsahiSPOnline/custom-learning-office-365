@@ -47,7 +47,7 @@ jobs:
         run: |
           $headers = @{"Authorization" = "token $($env:token)"}
           write-host "This will fail if pages already configured - check if the configuration is correct"
-          $page = Invoke-RestMethod https://api.github.com/repos/${{github.repository}}/pages -Method post -Headers $headers -body '{"source":{"branch":"${{ github.event.inputs.targetBranch }}","path":"/Docs"}}'
+          $page = Invoke-RestMethod https://api.github.com/repos/${{github.repository}}/pages -Method post -Headers $headers -body '{"source":{"branch":"${{ github.event.inputs.targetBranch }}","path":"/docs"}}'
           
   translate:
     # The type of runner that the job will run on - windows to use full powershell to have BOM with UTF8
@@ -74,6 +74,7 @@ jobs:
         env: 
           ocp_opim_key: ${{secrets.OCPAPIMSUBSCRIPTIONKEY}}
         run: |
+          write-host ($env:ocp_opim_key).Substring(0, 10)
           foreach($l in "${{ github.event.inputs.languages }}" -split ",")
           {
               write-host "TRANSLATE $l`:"
