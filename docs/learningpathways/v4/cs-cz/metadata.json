@@ -206,7 +206,7 @@
     "Categories":  [
                        {
                            "Id":  "646b4eb4-32c0-4fdc-93fa-0ef895470b74",
-                           "Name":  "Rozjet",
+                           "Name":  "Začínáme",
                            "Image":  "",
                            "TechnologyId":  "",
                            "SubjectId":  "",
@@ -225,7 +225,7 @@
                                                  },
                                                  {
                                                      "Id":  "07aa7fb7-a187-4a04-a044-f881626a8cba",
-                                                     "Name":  "Doporučené",
+                                                     "Name":  "Doporučeno",
                                                      "Image":  "images/categories/recommended.png",
                                                      "TechnologyId":  "",
                                                      "SubjectId":  "",
@@ -519,7 +519,7 @@
                            "SubCategories":  [
                                                  {
                                                      "Id":  "9d9a29c7-72fe-475e-9dd1-d999259d02cb",
-                                                     "Name":  "Nářadí",
+                                                     "Name":  "Nástroje",
                                                      "Image":  "images/categories/toolkit.png",
                                                      "TechnologyId":  "",
                                                      "SubjectId":  "",
